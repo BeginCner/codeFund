@@ -101,27 +101,27 @@ body {
 
     <div class="form-group">
       <label>프로젝트 제목</label>
-      <input type="text" name="title" placeholder="제목을 입력하세요">
+      <input type="text" name="title" placeholder="제목을 입력하세요" required>
     </div>
 
     <div class="form-group">
       <label>목표 금액</label>
-      <input type="number" name="goal" placeholder="목표 금액 (원)">
+      <input type="number" name="goal" placeholder="목표 금액 (원)"required min ="1">
     </div>
 
     <div class="form-group">
       <label>마감일</label>
-      <input type="date" name="endDate">
+      <input type="date" name="endDate"required>
     </div>
 
     <div class="form-group">
       <label>설명</label>
-      <textarea name="description" placeholder="프로젝트 설명을 입력하세요"></textarea>
+      <textarea name="description" placeholder="프로젝트 설명을 입력하세요" required></textarea>
     </div>
 
     <div class="form-group">
       <label>대표 이미지</label>
-      <input type="file" name="imageFile" accept="image/*">
+      <input type="file" name="imageFile" accept="image/*"required>
     </div>
 
     <input type="submit" class="submit-btn" value="등록">

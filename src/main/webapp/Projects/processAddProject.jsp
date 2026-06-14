@@ -57,6 +57,16 @@
 
     // 업로드된 파일명 가져오기 (파일 없으면 null)
     String fileName = multi.getFilesystemName("imageFile");
+    
+ 	// [추가] 이미지 파일이 업로드되지 않았다면 알림을 띄우고 뒤로 가기
+    if (fileName == null) {
+        out.println("<script>");
+        out.println("alert('프로젝트 이미지를 반드시 포함해야 합니다.');");
+        out.println("history.back();"); // 사용자가 입력하던 폼으로 되돌림
+        out.println("</script>");
+        return; // 아래 DB 저장 로직이 실행되지 않도록 중단
+    }
+    
     // DB에는 "/upload/파일명" 형태로 저장해서 나중에 <img src> 로 바로 쓸 수 있게
     String imagePath = (fileName != null) ? uploadUrl + fileName : null;
 
